@@ -2,14 +2,14 @@ import math
 
 def __main__():
     inputString = input("Please insert the number you want to convert: ")
-
+    inputBase = input("In what system do you want to convert (number from 2 - 9) :")
     inputNumber = int(inputString)
-    base = 2
+    base = int(inputBase)
 
     convertedNumber = convertIntoBase(base, inputNumber)
 
     print ("Decimal: " + inputString)
-    print ("Binary:  " + str(convertedNumber))
+    print (str(base) + "-base:  " + str(convertedNumber))
 
 def convertIntoBase(baseInteger, number):
     generatedList = []
