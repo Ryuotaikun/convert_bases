@@ -1,6 +1,26 @@
+import math
+
 def __main__():
-    print("this is a python program")
-    print("it does absolutely nothing")
-    #adding a comment
-    
+    inputString = input("Please insert the number you want to convert: ")
+
+    inputNumber = int(inputString)
+    base = 2
+
+    convertedNumber = convertIntoBase(base, inputNumber)
+
+    print ("Decimal: " + inputString)
+    print ("Binary:  " + str(convertedNumber))
+
+def convertIntoBase(baseInteger, number):
+    generatedList = []
+    while (number > 0):
+        generatedList.append(number % baseInteger)
+        number = math.floor(number / baseInteger)
+    newNumber = 0
+    position = 0
+    for digit in generatedList:
+        newNumber += digit*(10**position)
+        position += 1
+    return newNumber
+
 __main__()
